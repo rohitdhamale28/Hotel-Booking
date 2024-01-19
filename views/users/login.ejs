@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+<!-- this is the boilerplate imported using ejs-mate -->
+<body>
+    <br>
+    <br>
+    <h2>Login</h2>
+    <form method="POST" action="/login"  class="needs-validation" novalidate>
+        <div> 
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username"  class="form-control" id="username" placeholder="username" required>    
+            <div class="invalid-feedback">Please Enter Username</div>
+        </div>
+        <br>
+        
+        <div>
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password"  class="form-control" placeholder="Enter Password">
+            <div class="invalid-feedback">Please Enter Password</div>
+        </div>
+        <br>
+    
+        <br>
+        <button class="btn btn-dark">Log In</button>
+    </form>
+    <br>
+    <form method="get" action="/signup">
+        <button class="btn btn-primary">SignUp</button>
+
+    </form>
+    <br>
+    <br>
+</body>

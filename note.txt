@@ -1,0 +1,40 @@
+Steps to Store and upload Files 
+
+
+ MULTER: is package to send file to backend and they will store it in uploads folder
+        we can't send save files in mongodb due to limitations and hence we use cloud services for that 
+ our backend is not able to read to files as we have set
+ app.use(express.urlencoded({ extended: true }));
+using this we can only read the urlencoded data  
+
+
+ENV:
+ env file is used to store and protect our enviornment variables and credentials
+ here we are using it to store our cloud variables
+ dotenv is package that helps us to access our env file in js
+ we don't have to upload this file on anywhere
+ Values are stored in key value format with key in capital letters no space and semicolon is given
+ eg: CLOUD_API_SECRET=ZQIzU4ARhvlBK3nwAVA5c12A_KQ
+
+Using Cloudinary free cloud service for cloud
+
+1. install Multer and test it for local storage
+2. sign in on cloudinary and save the Product Enviornment credentials in .env file
+3. install package cloudinary and Multer-storage-cloudinary
+4. next step in cloudConfig.js
+
+
+
+DEPLOYMENT  
+
+1. Deploy your database on mongodb atlas
+mongoatlas credrntials:
+username:rohitdhamale05
+password:cM79cg.PxW9N7uz
+link to connect : mongodb+srv://rohitdhamale05:cM79cg.PxW9N7uz@cluster0.82ltj62.mongodb.net/?retryWrites=true&w=majority
+connect it with mongo atlas using above link
+2. make small change in node modules,
+  add: at the start 
+    "engines": {
+    "node" : "16.13.0"
+  },

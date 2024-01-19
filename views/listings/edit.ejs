@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") %>
+<!-- this is the boilerplate imported using ejs-mate -->
+<body>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+
+       
+    <h3>Edit Your Listing </h3>
+    <form method="POST" action="/listings/<%= editListings._id  %>?_method=PUT" class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" class="form-control" id="title"  value="<%= editListings.title  %>" required>    
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" id="description" cols="30" rows="10" required><%= editListings.description %></textarea>
+        </div>
+        <br>
+        <div class="mb-3">
+            <img src="<%= editListings.image.url %>" alt="">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" name="listing[image]" id="image" class="form-control" >
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" class="form-control" id="price" value="<%= editListings.price %>" required>
+        </div>
+         <br>
+         <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" class="form-control" id="location" value="<%= editListings.location %>" required>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" class="form-control" id="country" value="<%= editListings.country %>" required>
+        </div>
+        <br>
+        <button class="btn btn-dark">Edit</button>
+        
+
+    </form>
+</div>
+</div>
+<script src="/js/script.js"></script>
+
+</body>

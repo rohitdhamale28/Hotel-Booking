@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") %>
+<!-- this is the boilerplate imported using ejs-mate -->
+<body>
+
+    <br>
+    <br>
+<div class="row row-col-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for(let list of allListings){   %>
+        <div class="card col" style="width: 20rem;">
+           <a href="/listings/<%= list._id %>" class="listing-link">
+             <img src="<%= list.image.url  %>" class="card-img-top"
+              alt="listing_img" style="height: 20rem">
+              <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <p class="card-text">
+               <b> <%= list.title %></b><br>
+                &#8377; <%= list.price %> /night
+              </p>
+            </div>
+           </a>
+
+        </div>
+            <% } %>
+</div>
+   
+
+
+
+
+</body>
